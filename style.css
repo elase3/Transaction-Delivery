@@ -1,0 +1,483 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@700&family=Dancing+Script:wght@400;500;600;700&family=Jomhuria&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@1,300&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Shadows+Into+Light&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+}
+
+.center {
+    height: 100px;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #00000000;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 200px;
+    z-index: 5;
+    display: none;
+
+}
+
+.wave {
+    width: 5px;
+    height: 100px;
+    background: linear-gradient(45deg, cyan, #fff);
+    margin: 10px;
+    animation: wave 1s linear infinite;
+    border-radius: 20px;
+}
+
+.wave:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.wave:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.wave:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.wave:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+.wave:nth-child(6) {
+    animation-delay: 0.5s;
+}
+
+.wave:nth-child(7) {
+    animation-delay: 0.6s;
+}
+
+.wave:nth-child(8) {
+    animation-delay: 0.7s;
+}
+
+.wave:nth-child(9) {
+    animation-delay: 0.8s;
+}
+
+.wave:nth-child(10) {
+    animation-delay: 0.9s;
+}
+
+@keyframes wave {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+.title {
+    text-align: center;
+    margin-top: 35px;
+    font-size: 30px;
+    font-weight: 500;
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: italic;
+    color: #00358b;
+
+
+}
+
+/* .container{
+  display : none
+} */
+
+.container {
+    position: relative;
+    height: 100%;
+    background-color: #fff;
+    padding: 50px 30px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    /* background: linear-gradient(135deg, #003966, #ff2300); */
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 14px;
+}
+
+/* .yasserLogo{
+   position: absolute;
+    top: 10px;
+    left: 14px;
+} */
+
+.container1 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.user-details .input-box .transaction {
+    width: 100%;
+
+}
+
+#support_trans {}
+
+.content form .user-details {
+
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+form .user-details .input-box {
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+
+form .input-box span.details {
+    display: block;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 5px;
+
+}
+
+.user-details .input-box input {
+    height: 45px;
+    width: 350px;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-right: 15px;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+    border-color: #1889fa;
+}
+
+form .gender-details .gender-title {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+form .category {
+    display: flex;
+    width: 80%;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+
+form .category label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+form .button {
+    height: 45px;
+    margin: 35px 0;
+    justify-content: center;
+    justify-items: center;
+    display: flex;
+}
+
+form .button input {
+    height: 100%;
+    width: 300px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #000000, #1f5684);
+}
+
+form .button input:hover {
+    /* transform: scale(0.99); */
+    background: linear-gradient(-135deg, #000000, #1f5684);
+}
+
+
+
+.user-details .input-box select {
+    height: 45px;
+    width: 350px;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-right: 15px;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.user-details .input-box select:focus,
+.user-details .input-box select:valid {
+    border-color: #1889fa;
+}
+
+
+#thank_you {
+    text-align: center;
+
+}
+
+
+#thank_you p {
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 25px
+}
+
+#closePage {
+
+    width: 300px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    height: 45px;
+    margin: 35px 0;
+
+    background-color: blue;
+}
+
+input.login {
+    width: 200px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    height: 45px;
+    margin-top: 15px;
+    background-color: #04AA6D;
+
+}
+
+input.login:hover {
+    background-color: #059862;
+}
+
+
+
+.copyright h3 {
+    text-align: center;
+    text-transform: capitalize;
+    color: #8a0096;
+    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Dancing Script', cursive;
+    font-size: 20px;
+
+
+}
+
+.copyright h3 span {
+    color: red;
+}
+
+/* 
+.rep_code {
+    display: none;
+} */
+
+
+
+/*page1*/
+.page1_class1-off {
+    display: none;
+}
+
+
+/*page2*/
+.page2_class1 {
+    display: none;
+}
+
+.page2_id1-off {
+    display: none;
+}
+
+/*page3*/
+.page3_class1 {
+    display: none;
+
+}
+
+.page3_id1-off {
+    display: none;
+}
+
+/*page4*/
+.page4_class1 {
+    display: none;
+
+}
+
+.page4_id1-off {
+    display: none;
+}
+
+
+.page1_class1 h1 {
+    color: #04AA6D;
+}
+
+.page1_class1 #username,
+.page1_class1 #password {
+    height: 45px;
+    width: 200px;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-right: 15px;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.page1_class1 #username:focus,
+.page1_class1 #password:focus {
+    border-color: #04AA6D;
+}
+
+/* input[type=text]:focus,
+input[type=text]:valid{
+        border-bottom:2px solid #1889fa;
+      } */
+
+.user {
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+    border: 8px solid black;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/*the head/*/
+.user::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+    left: calc(50% - 11px);
+    top: 10px;
+}
+
+/*the body*/
+.user::after {
+    content: '';
+    display: inline-block;
+    width: 50px;
+    height: 40px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+    left: calc(50% - 24px);
+    top: 39px;
+}
+
+
+.ontop {
+    z-index: -999;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: none;
+    position: fixed;
+    background-color: #cccccc;
+    color: #aaaaaa;
+    opacity: .5;
+    filter: alpha(opacity=50);
+}
+
+#popup {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    color: #295ff1;
+    font-size: 1.2rem;
+    background-color: #ffffff;
+    top: 80%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -150px;
+    border-radius: 10px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 10;
+    display: none;
+    padding: 15px;
+
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#popuperror {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    color: #295ff1;
+    font-size: 1.2rem;
+    background-color: #ffffff;
+    top: 80%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -150px;
+    border-radius: 10px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 10;
+    display: none;
+    padding: 15px;
+
+}

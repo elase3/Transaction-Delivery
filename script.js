@@ -147,3 +147,8 @@ document.onkeydown = function (evt) {
     hide("popDiv");
   }
 };
+
+const loader = document.getElementById("preloader");
+window.addEventListener("load", function () {
+  loader.style.display = "none";
+});

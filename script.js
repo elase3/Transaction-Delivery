@@ -133,7 +133,7 @@ function hide() {
   document.getElementById("popDiv").style.display = "none";
   document.getElementById("container").style.zIndex = "1";
   loading.style.display = "none";
-  window.addEventListener("load", handleFormSubmit());
+  // window.addEventListener("load", handleFormSubmit());
 }
 
 function popError() {

@@ -35,22 +35,25 @@ form.addEventListener("submit", (e) => {
       handleFormSubmit();
 
       pop();
-      throw new Error(popError());
+
+      throw new Error(pop());
     })
     .catch((error) => {
       // alert("Check your Connection Please ....!")
       loading.style.display = "flex";
       popError();
-      // throw new Error(pop());
+      throw new Error(popError());
     });
 });
 
+var timeofsubmission = new Date().toLocaleString();
 var date = new Date();
 var year = date.getFullYear();
 var month = String(date.getMonth() + 1).padStart(2, "0");
 var todayDate = String(date.getDate()).padStart(2, "0");
 var datePattern = year + "-" + month + "-" + todayDate;
 document.getElementById("dateOfDay").value = datePattern;
+document.getElementById("timeofsubmission").value = timeofsubmission;
 
 const commonValues = {
   سائق: [

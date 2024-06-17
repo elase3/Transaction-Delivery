@@ -12,7 +12,7 @@
 // refreshBtn.addEventListener("click", handleClick);
 
 const loading = document.getElementById("loading");
-// var timeofsubmit = new Date().toLocaleString();
+
 // window.addEventListener("load", handleFormSubmit());
 
 function handleFormSubmit() {
@@ -21,7 +21,7 @@ function handleFormSubmit() {
     '<option value="" disabled selected>اختار كودك</option>';
   document.getElementById("support_trans").setAttribute("disabled", "");
   document.getElementById("dateOfDay").value = datePattern;
-  // document.getElementById("timeofsubmission").value = timeofsubmit;
+  document.getElementById("timeofsubmission").value = timeofsubmission;
 }
 
 const scriptURL =
@@ -32,27 +32,25 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   fetch(scriptURL, { method: "POST", body: new FormData(form) })
     .then((response) => {
-      loading.style.display = "none";
       handleFormSubmit();
-
+      console.log(new Date().toLocaleString());
       pop();
-      throw new Error(popError());
     })
     .catch((error) => {
-      // alert("Check your Connection Please ....!")
+      // alert("Check your Connection Please ....!");
       loading.style.display = "flex";
       popError();
-      throw new Error(pop());
     });
 });
 
+var timeofsubmission = new Date().toLocaleString();
 var date = new Date();
 var year = date.getFullYear();
 var month = String(date.getMonth() + 1).padStart(2, "0");
 var todayDate = String(date.getDate()).padStart(2, "0");
 var datePattern = year + "-" + month + "-" + todayDate;
 document.getElementById("dateOfDay").value = datePattern;
-document.getElementById("timeofsubmission").value = timeofsubmit;
+document.getElementById("timeofsubmission").value = timeofsubmission;
 
 const commonValues = {
   سائق: [
@@ -133,7 +131,7 @@ function hide() {
   document.getElementById("popDiv").style.display = "none";
   document.getElementById("container").style.zIndex = "1";
   loading.style.display = "none";
-  // window.addEventListener("load", handleFormSubmit());
+  window.addEventListener("load", handleFormSubmit());
 }
 
 function popError() {

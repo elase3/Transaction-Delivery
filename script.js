@@ -16,7 +16,6 @@ const loading = document.getElementById("loading");
 // window.addEventListener("load", handleFormSubmit());
 
 function handleFormSubmit() {
-  loading.style.display = "flex";
   document.getElementById("myForm").reset();
   document.getElementById("rep_code").innerHTML =
     '<option value="" disabled selected>اختار كودك</option>';
@@ -128,6 +127,7 @@ function hide() {
   document.getElementById("popDiv").style.display = "none";
   document.getElementById("container").style.zIndex = "1";
   loading.style.display = "none";
+  window.addEventListener("load", handleFormSubmit());
 }
 
 function popError() {

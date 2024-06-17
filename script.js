@@ -13,7 +13,7 @@
 
 const loading = document.getElementById("loading");
 var timeofsubmit = new Date().toLocaleString();
-// window.addEventListener("load", handleFormSubmit());
+window.addEventListener("load", handleFormSubmit());
 
 function handleFormSubmit() {
   document.getElementById("myForm").reset();

@@ -128,13 +128,14 @@ function pop() {
   document.getElementById("popDiv").style.display = "block";
   document.getElementById("container").style.zIndex = "-999999";
   document.getElementById("popuperror").style.display = "none";
+  loading.style.display = "none";
 }
 function hide() {
   document.getElementById("popup").style.display = "none";
   document.getElementById("popDiv").style.display = "none";
   document.getElementById("container").style.zIndex = "1";
   loading.style.display = "none";
-  // window.addEventListener("load", handleFormSubmit());
+  window.addEventListener("load", handleFormSubmit());
 }
 
 function popError() {

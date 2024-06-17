@@ -39,6 +39,7 @@ form.addEventListener("submit", (e) => {
     .catch((error) => {
       // alert("Check your Connection Please ....!");
       loading.style.display = "flex";
+      loading.style.zIndex = 101;
       popError();
     });
 });

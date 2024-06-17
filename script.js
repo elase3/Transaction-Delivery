@@ -21,6 +21,7 @@ function handleFormSubmit() {
     '<option value="" disabled selected>اختار كودك</option>';
   document.getElementById("support_trans").setAttribute("disabled", "");
   document.getElementById("dateOfDay").value = datePattern;
+  document.getElementById("timeofsubmission").value = timeofsubmission;
 }
 
 const scriptURL =
@@ -46,12 +47,14 @@ form.addEventListener("submit", (e) => {
     });
 });
 
+var timeofsubmission = new Date().toLocaleString();
 var date = new Date();
 var year = date.getFullYear();
 var month = String(date.getMonth() + 1).padStart(2, "0");
 var todayDate = String(date.getDate()).padStart(2, "0");
 var datePattern = year + "-" + month + "-" + todayDate;
 document.getElementById("dateOfDay").value = datePattern;
+document.getElementById("timeofsubmission").value = timeofsubmission;
 
 const commonValues = {
   سائق: [

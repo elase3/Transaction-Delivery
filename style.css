@@ -13,6 +13,8 @@ body {
     justify-content: center;
     align-items: center;
     padding: 10px;
+    width: 100%;
+    height: 100vh;
 
 }
 
@@ -112,7 +114,7 @@ body {
     background-color: #fff;
     padding: 50px 30px 30px;
     border-radius: 5px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); */
     /* background: linear-gradient(135deg, #003966, #ff2300); */
 }
 

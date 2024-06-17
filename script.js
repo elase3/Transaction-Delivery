@@ -31,16 +31,18 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   fetch(scriptURL, { method: "POST", body: new FormData(form) })
     .then((response) => {
+      loading.style.display = "none";
       handleFormSubmit();
 
       pop();
-      // throw new Error(popError());
+      throw new Error(popError());
     })
     .catch((error) => {
       // alert("Check your Connection Please ....!");
 
       loading.style.display = "flex";
       popError();
+      throw new Error(pop());
     });
 });
 

@@ -39,11 +39,10 @@ form.addEventListener("submit", (e) => {
       throw new Error(popError());
     })
     .catch((error) => {
-      // alert("Check your Connection Please ....!");
-
+      // alert("Check your Connection Please ....!")
       loading.style.display = "flex";
       popError();
-      throw new Error(pop());
+      // throw new Error(pop());
     });
 });
 

@@ -492,7 +492,7 @@ a {
 }
 
 #preloader {
-    background: #000 url("./beyti.gif") no-repeat center center;
+    background: #fff url("./beyti.gif") no-repeat center center;
     background-size: 100%;
     width: 100%;
     height: 100vh;

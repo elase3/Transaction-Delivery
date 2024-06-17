@@ -21,6 +21,7 @@ function handleFormSubmit() {
     '<option value="" disabled selected>اختار كودك</option>';
   document.getElementById("support_trans").setAttribute("disabled", "");
   document.getElementById("dateOfDay").value = datePattern;
+  document.getElementById("timeofsubmission").value = timeofsubmission;
 }
 
 const scriptURL =
@@ -35,14 +36,12 @@ form.addEventListener("submit", (e) => {
       handleFormSubmit();
 
       pop();
-
-      throw new Error(pop());
     })
     .catch((error) => {
       // alert("Check your Connection Please ....!")
       loading.style.display = "flex";
       popError();
-      throw new Error(popError());
+      // throw new Error(popError());
     });
 });
 

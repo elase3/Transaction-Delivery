@@ -12,8 +12,8 @@
 // refreshBtn.addEventListener("click", handleClick);
 
 const loading = document.getElementById("loading");
-var timeofsubmit = new Date().toLocaleString();
-window.addEventListener("load", handleFormSubmit());
+// var timeofsubmit = new Date().toLocaleString();
+// window.addEventListener("load", handleFormSubmit());
 
 function handleFormSubmit() {
   document.getElementById("myForm").reset();
@@ -21,7 +21,7 @@ function handleFormSubmit() {
     '<option value="" disabled selected>اختار كودك</option>';
   document.getElementById("support_trans").setAttribute("disabled", "");
   document.getElementById("dateOfDay").value = datePattern;
-  document.getElementById("timeofsubmission").value = timeofsubmit;
+  // document.getElementById("timeofsubmission").value = timeofsubmit;
 }
 
 const scriptURL =

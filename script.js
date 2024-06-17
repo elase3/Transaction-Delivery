@@ -140,6 +140,7 @@ function popError() {
   document.getElementById("popDiv").style.display = "block";
   document.getElementById("container").style.zIndex = "-999999";
   document.getElementById("popup").style.display = "none";
+  loading.style.display = "flex";
 }
 //To detect escape button
 document.onkeydown = function (evt) {

@@ -34,6 +34,7 @@ form.addEventListener("submit", (e) => {
       handleFormSubmit();
 
       pop();
+      // throw new Error(popError());
     })
     .catch((error) => {
       // alert("Check your Connection Please ....!");
@@ -121,6 +122,7 @@ function pop() {
   document.getElementById("popup").style.display = "flex";
   document.getElementById("popDiv").style.display = "block";
   document.getElementById("container").style.zIndex = "-999999";
+  document.getElementById("popuperror").style.display = "none";
 }
 function hide() {
   document.getElementById("popup").style.display = "none";
@@ -134,6 +136,7 @@ function popError() {
   document.getElementById("popuperror").style.display = "flex";
   document.getElementById("popDiv").style.display = "block";
   document.getElementById("container").style.zIndex = "-999999";
+  document.getElementById("popup").style.display = "none";
 }
 //To detect escape button
 document.onkeydown = function (evt) {

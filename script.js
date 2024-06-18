@@ -151,8 +151,8 @@ document.onkeydown = function (evt) {
 };
 
 const loader = document.getElementById("preloader");
-const framee = document.querySelector("iframe");
 window.addEventListener("load", function () {
-  loader.style.display = "none";
-  framee.style.display = "none";
+  setTimeout(() => {
+    loader.style.display = "none";
+  }, 5000);
 });

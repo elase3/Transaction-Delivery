@@ -22,7 +22,7 @@ function handleFormSubmit() {
   document.getElementById("support_trans").setAttribute("disabled", "");
   document.getElementById("dateOfDay").value = datePattern;
   document.getElementById("timeofsubmission").value = timeofsubmission;
-  window.addEventListener("load", timeofsubmission);
+ 
 }
 
 const scriptURL =
@@ -157,6 +157,7 @@ window.addEventListener("load", function () {
     loader.style.display = "none";
   }, 5000);
 });
+
 
 
 

@@ -52,7 +52,7 @@ var month = String(date.getMonth() + 1).padStart(2, "0");
 var todayDate = String(date.getDate()).padStart(2, "0");
 var datePattern = year + "-" + month + "-" + todayDate;
 document.getElementById("dateOfDay").value = datePattern;
-document.getElementById("timeofsubmission").value = timeofsubmission;
+// document.getElementById("timeofsubmission").value = timeofsubmission;
 
 const commonValues = {
   سائق: [
@@ -157,4 +157,5 @@ window.addEventListener("load", function () {
     loader.style.display = "none";
   }, 5000);
 });
+
 

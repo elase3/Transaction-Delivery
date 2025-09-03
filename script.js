@@ -100,7 +100,14 @@ function csvSplit(row) {
   return row.split(",").map((val) => val.substring(1, val.length - 1));
 }
 
-var timeofsubmission = new Date().toLocaleString();
+(function time() {
+	      new Date().toString("hh:mm:ss tt");
+        var timeout = setTimeout(time, 1000); // recalls the function after 1000 ms
+})();
+
+
+
+// var timeofsubmission = new Date().toLocaleString();
 var timeout = setTimeout(timeofsubmission, 1000)
 var date = new Date();
 var year = date.getFullYear();
@@ -108,7 +115,8 @@ var month = String(date.getMonth() + 1).padStart(2, "0");
 var todayDate = String(date.getDate()).padStart(2, "0");
 var datePattern = year + "-" + month + "-" + todayDate;
 document.getElementById("dateOfDay").value = datePattern;
-document.getElementById("timeofsubmission").value = timeofsubmission;
+document.getElementById("timeofsubmission").value = time
+//document.getElementById("timeofsubmission").value = timeofsubmission;
 
 const commonValues = {
   سائق: [
@@ -213,6 +221,7 @@ window.addEventListener("load", function () {
     loader.style.display = "none";
   }, 5000);
 });
+
 
 
 

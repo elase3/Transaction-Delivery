@@ -490,13 +490,6 @@ a {
     display: none;
 }
 
-#time {
-    width: 100%;
-    background-color: blue;
-    
-    
-}
-
 #preloader {
     background: #fff url("./beyti.gif") no-repeat center center;
     background-size: 100%;
@@ -510,4 +503,5 @@ a {
 iframe {
     display: none;
 }
+
 

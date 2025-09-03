@@ -27,7 +27,7 @@ function handleFormSubmit() {
     '<option value="" disabled selected>اختار كودك</option>';
   document.getElementById("support_trans").setAttribute("disabled", "");
   document.getElementById("dateOfDay").value = datePattern;
-  document.getElementById("timeofsubmission").value = timeofsubmission;
+  //document.getElementById("timeofsubmission").value = timeofsubmission;
 }
 
 const scriptURL =
@@ -105,14 +105,14 @@ function csvSplit(row) {
   return row.split(",").map((val) => val.substring(1, val.length - 1));
 }
 
-var timeofsubmission = new Date().toLocaleString();
+//var timeofsubmission = new Date().toLocaleString();
 var date = new Date();
 var year = date.getFullYear();
 var month = String(date.getMonth() + 1).padStart(2, "0");
 var todayDate = String(date.getDate()).padStart(2, "0");
 var datePattern = year + "-" + month + "-" + todayDate;
 document.getElementById("dateOfDay").value = datePattern;
-document.getElementById("timeofsubmission").value = timeofsubmission;
+//ocument.getElementById("timeofsubmission").value = timeofsubmission;
 
 const commonValues = {
   سائق: [
@@ -216,5 +216,18 @@ window.addEventListener("load", function () {
     loader.style.display = "none";
   }, 5000);
 });
+
+function updateClock() {
+  const now = new Date();
+  const hours = now.getHours().toString().padStart(2, "0");
+  const minutes = now.getMinutes().toString().padStart(2, "0");
+  const seconds = now.getSeconds().toString().padStart(2, "0");
+  const timeString = `${datePattern}, ${hours}:${minutes}:${seconds}`;
+  document.getElementById("timeofsubmission").value = timeString;
+}
+
+updateClock();
+setInterval(updateClock, 1000);
+
 
 

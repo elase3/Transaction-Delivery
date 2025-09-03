@@ -62,61 +62,6 @@ form.addEventListener("submit", (e) => {
     });
 });
 
-//fetch and get data from sheet
-// sheetID you can find in the URL of your spreadsheet after "spreadsheet/d/"
-const sheetId = "1tHBY9cE9YJUyuof6U__sVtHcdcxySH_d2MwQox4vN-Y";
-// sheetName is the name of the TAB in your spreadsheet
-const sheetName = encodeURIComponent("Sheet1");
-const sheetURL = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${sheetName}`;
-
-fetch(sheetURL)
-  .then((response) => response.text())
-  .then((csvText) => {
-    handleResponse(csvText);
-  });
-
-let tab = "";
-function handleResponse(csvText) {
-  let sheetObjects = csvToObjects(csvText);
-  // sheetObjects is now an Array of Objects
-  sheetObjects.forEach(function (user) {
-    tab += `<tr>
-<td>${user.dateOfDay}</td>
-<td>${user.jop}</td>
-<td>${user.rep_code}</td>
-<td>${user.transaction}</td>
-<td>${user.support_trans}</td>
-
-</tr>`;
-  });
-  document.getElementById("tbody").innerHTML = tab;
-  // ADD CODE HERE
-}
-
-function csvToObjects(csv) {
-  const csvRows = csv.split("\n");
-  const propertyNames = csvSplit(csvRows[0]);
-  let objects = [];
-  for (let i = 1, max = csvRows.length; i < max; i++) {
-    let thisObject = {};
-    let row = csvSplit(csvRows[i]);
-    for (let j = 0, max = row.length; j < max; j++) {
-      thisObject[propertyNames[j]] = row[j];
-      // BELOW 4 LINES WILL CONVERT DATES IN THE "ENROLLED" COLUMN TO JS DATE OBJECTS
-      // if (propertyNames[j] === "Enrolled") {
-      //   thisObject[propertyNames[j]] = new Date(row[j]);
-      // } else {
-      //   thisObject[propertyNames[j]] = row[j];
-      // }
-    }
-    objects.push(thisObject);
-  }
-  return objects;
-}
-
-function csvSplit(row) {
-  return row.split(",").map((val) => val.substring(1, val.length - 1));
-}
 
 //var timeofsubmission = new Date().toLocaleString();
 var date = new Date();
@@ -229,6 +174,7 @@ window.addEventListener("load", function () {
     loader.style.display = "none";
   }, 5000);
 });
+
 
 
 

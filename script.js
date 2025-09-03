@@ -21,7 +21,7 @@ function handleFormSubmit() {
     '<option value="" disabled selected>اختار كودك</option>';
   document.getElementById("support_trans").setAttribute("disabled", "");
   document.getElementById("dateOfDay").value = datePattern;
-  // document.getElementById("timeofsubmission").value = timeofsubmission;
+  document.getElementById("timeofsubmission").value = timeofsubmission;
 }
 
 const scriptURL =
@@ -211,5 +211,6 @@ window.addEventListener("load", function () {
     loader.style.display = "none";
   }, 5000);
 });
+
 
 

@@ -210,15 +210,3 @@ window.addEventListener("load", function () {
     loader.style.display = "none";
   }, 5000);
 });
-
-
-window.addEventListener("load", function () {
-  setInterval(() => {
-    timeofsubmission
-  }, 1000);
-});
-
-
-
-var timeInterval = setInterval(time, 1000)
-

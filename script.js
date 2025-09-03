@@ -181,6 +181,7 @@ function pop() {
   document.getElementById("container").style.zIndex = "-999999";
   document.getElementById("popuperror").style.display = "none";
   loading.style.display = "none";
+  window.addEventListener("load", handleFormSubmit());  //new line 03/09/2025
 }
 function hide() {
   document.getElementById("popup").style.display = "none";
@@ -210,3 +211,4 @@ window.addEventListener("load", function () {
     loader.style.display = "none";
   }, 5000);
 });
+

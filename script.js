@@ -22,7 +22,7 @@ function handleFormSubmit() {
   document.getElementById("support_trans").setAttribute("disabled", "");
   document.getElementById("dateOfDay").value = datePattern;
   document.getElementById("timeofsubmission").value = timeofsubmission;
-  const timeout = setTimeout(timeofsubmission, 1000)
+  
 }
 
 const scriptURL =
@@ -101,6 +101,7 @@ function csvSplit(row) {
 }
 
 var timeofsubmission = new Date().toLocaleString();
+var timeout = setTimeout(timeofsubmission, 1000)
 var date = new Date();
 var year = date.getFullYear();
 var month = String(date.getMonth() + 1).padStart(2, "0");
@@ -212,6 +213,7 @@ window.addEventListener("load", function () {
     loader.style.display = "none";
   }, 5000);
 });
+
 
 
 

@@ -12,10 +12,12 @@
 // refreshBtn.addEventListener("click", handleClick);
 
 const loading = document.getElementById("loading");
-function time () {
-	document.getElementById("time").innerHTML = new Date().toString("hh:mm:ss tt");
-}
-var timeInterval = setInterval(time, 1000); // recalls the function every 1000 ms
+
+//for time 03/09/2025
+// function time () {
+// 	document.getElementById("time").innerHTML = new Date().toString("hh:mm:ss tt");
+// }
+// var timeInterval = setInterval(time, 1000); // recalls the function every 1000 ms
 
 // window.addEventListener("load", handleFormSubmit());
 
@@ -214,4 +216,5 @@ window.addEventListener("load", function () {
     loader.style.display = "none";
   }, 5000);
 });
+
 

@@ -30,6 +30,19 @@ function handleFormSubmit() {
   //document.getElementById("timeofsubmission").value = timeofsubmission;
 }
 
+// for time input
+function updateClock() {
+  const now = new Date();
+  const hours = now.getHours().toString().padStart(2, "0");
+  const minutes = now.getMinutes().toString().padStart(2, "0");
+  const seconds = now.getSeconds().toString().padStart(2, "0");
+  const timeString = `${datePattern}, ${hours}:${minutes}:${seconds}`;
+  document.getElementById("timeofsubmission").value = timeString;
+}
+
+updateClock();
+setInterval(updateClock, 1000);
+
 const scriptURL =
   "https://script.google.com/macros/s/AKfycbyF873Ajo0wA9bIxju6eMsVa37Stjx9usTVddu7DQ6CH1cc6HOHhwJzZuXhUTsmFS0Sng/exec";
 const form = document.forms["google-sheet"];
@@ -217,17 +230,8 @@ window.addEventListener("load", function () {
   }, 5000);
 });
 
-function updateClock() {
-  const now = new Date();
-  const hours = now.getHours().toString().padStart(2, "0");
-  const minutes = now.getMinutes().toString().padStart(2, "0");
-  const seconds = now.getSeconds().toString().padStart(2, "0");
-  const timeString = `${datePattern}, ${hours}:${minutes}:${seconds}`;
-  document.getElementById("timeofsubmission").value = timeString;
-}
 
-updateClock();
-setInterval(updateClock, 1000);
+
 
 
 

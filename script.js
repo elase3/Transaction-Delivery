@@ -1,25 +1,8 @@
-// function preventFormSubmit() {
-//   var forms = document.querySelectorAll("form");
-//   for (var i = 0; i < forms.length; i++) {
-//     forms[i].addEventListener("submit", function (event) {
-//       event.preventDefault();
-//     });
-//   }
-// }
 
-// for refresh socend page
-// const refreshBtn = document.getElementById("closePage");
-// refreshBtn.addEventListener("click", handleClick);
 
 const loading = document.getElementById("loading");
 
-//for time 03/09/2025
-// function time () {
-// 	document.getElementById("time").innerHTML = new Date().toString("hh:mm:ss tt");
-// }
-// var timeInterval = setInterval(time, 1000); // recalls the function every 1000 ms
 
-// window.addEventListener("load", handleFormSubmit());
 
 function handleFormSubmit() {
   document.getElementById("myForm").reset();
@@ -27,7 +10,7 @@ function handleFormSubmit() {
     '<option value="" disabled selected>اختار كودك</option>';
   document.getElementById("support_trans").setAttribute("disabled", "");
   document.getElementById("dateOfDay").value = datePattern;
-  //document.getElementById("timeofsubmission").value = timeofsubmission;
+ 
 }
 
 // for time input
@@ -43,24 +26,7 @@ function updateClock() {
 updateClock();
 setInterval(updateClock, 1000);
 
-// const scriptURL =
-//   "https://script.google.com/macros/s/AKfycbyF873Ajo0wA9bIxju6eMsVa37Stjx9usTVddu7DQ6CH1cc6HOHhwJzZuXhUTsmFS0Sng/exec";
-// const form = document.forms["google-sheet"];
 
-// form.addEventListener("submit", (e) => {
-//   e.preventDefault();
-//   fetch(scriptURL, { method: "POST", body: new FormData(form) })
-//     .then((response) => {
-//       handleFormSubmit();
-//       // console.log(new Date().toLocaleString());
-//       pop();
-//     })
-//     .catch((error) => {
-//       // alert("Check your Connection Please ....!");
-//       loading.style.display = "flex";
-//       popError();
-//     });
-// });
 
 // في client-side (script.js)
 const proxyURL = "/.netlify/functions/send-to-sheet"; 
@@ -81,7 +47,7 @@ form.addEventListener("submit", (e) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log("Response from function:", data); // Debug
+      console.log("Sucssesful"); // Debug
       handleFormSubmit();
       pop();
     })
@@ -94,19 +60,13 @@ form.addEventListener("submit", (e) => {
 
 
 
-
-
-
-
-
-//var timeofsubmission = new Date().toLocaleString();
 var date = new Date();
 var year = date.getFullYear();
 var month = String(date.getMonth() + 1).padStart(2, "0");
 var todayDate = String(date.getDate()).padStart(2, "0");
 var datePattern = year + "-" + month + "-" + todayDate;
 document.getElementById("dateOfDay").value = datePattern;
-//ocument.getElementById("timeofsubmission").value = timeofsubmission;
+
 
 const commonValues = {
   سائق: [
@@ -151,20 +111,6 @@ function vacation(value) {
   }
 }
 
-// const checkOnlineStatus = async () => {
-//   try {
-//     const online = await fetch(
-//       "https://docs.google.com/spreadsheets/d/1hyJnx4v3DYGA6wHCjgop8rc9v0tVvSDTYHu9eYz9x9w/edit#gid=0"
-//     );
-//     return online.status >= 200 && online.status < 300; // either true or false
-//   } catch (err) {
-//     return false; // definitely offline
-//   }
-// };
-
-// setInterval(async () => {
-
-// }, 3000); // probably too often, try 30000 for every 30 seconds
 
 function changeColor(ev) {
   if (ev.value.length > 0) {
@@ -210,12 +156,3 @@ window.addEventListener("load", function () {
     loader.style.display = "none";
   }, 5000);
 });
-
-
-
-
-
-
-
-
-

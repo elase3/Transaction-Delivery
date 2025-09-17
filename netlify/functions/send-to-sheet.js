@@ -17,10 +17,10 @@ export async function handler(event) {
       body: text,
     };
   } catch () {
-    
+   
     return {
-      console.log(succsessful)
-     
+      statusCode: 500,
+      body: JSON.stringify({ error: error.message }),
     };
   }
 }

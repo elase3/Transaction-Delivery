@@ -1,24 +1,29 @@
-exports.handler = async (event, context) => {
+exports.handler = async (event) => {
   try {
-    const scriptURL = process.env.APPS_SCRIPT_URL;
+    console.log("Incoming body:", event.body); // نطبع البودي في Netlify log
+    console.log("Incoming headers:", event.headers); // نطبع الهيدرز كمان
 
-    // نبعته زي ما جاي (FormData) من الـ Frontend
-    const response = await fetch(scriptURL, {
+    // ابعت للـ Google Script
+    const response = await fetch(process.env.APPS_SCRIPT_URL, {
       method: "POST",
-      headers: { "Content-Type": event.headers["content-type"] },
       body: event.body,
+      headers: {
+        "Content-Type": event.headers["content-type"],
+      },
     });
 
-    const result = await response.text();
+    const text = await response.text();
+    console.log("Google Script response:", text);
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: "Data sent successfully!", result }),
+      body: text,
     };
-  } catch (error) {
+  } catch (err) {
+    console.error("Error occurred:", err.message);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: error.message }),
+      body: JSON.stringify({ error: err.message }),
     };
   }
 };

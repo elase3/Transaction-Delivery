@@ -16,7 +16,7 @@ export async function handler(event) {
       statusCode: 200,
       body: text,
     };
-  } catch () {
+  } catch (error) {
    
     return {
       statusCode: 500,

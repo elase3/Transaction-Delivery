@@ -5,13 +5,13 @@ exports.handler = async (event) => {
 
     // ابعت للـ Google Script
     const response = await fetch(process.env.APPS_SCRIPT_URL, {
-      method: "POST",
-      body: event.body,
-      headers: {
-        "Content-Type": event.headers["content-type"],
-      },
-    });
-
+  method: "POST",
+  headers: {
+    "Content-Type": "application/x-www-form-urlencoded",
+  },
+  body: new URLSearchParams(JSON.parse(event.body)).toString(),
+});
+    
     const text = await response.text();
     console.log("Google Script response:", text);
 

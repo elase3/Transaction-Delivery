@@ -43,24 +43,46 @@ function updateClock() {
 updateClock();
 setInterval(updateClock, 1000);
 
-const scriptURL =
-  "https://script.google.com/macros/s/AKfycbyF873Ajo0wA9bIxju6eMsVa37Stjx9usTVddu7DQ6CH1cc6HOHhwJzZuXhUTsmFS0Sng/exec";
+// const scriptURL =
+//   "https://script.google.com/macros/s/AKfycbyF873Ajo0wA9bIxju6eMsVa37Stjx9usTVddu7DQ6CH1cc6HOHhwJzZuXhUTsmFS0Sng/exec";
+// const form = document.forms["google-sheet"];
+
+// form.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   fetch(scriptURL, { method: "POST", body: new FormData(form) })
+//     .then((response) => {
+//       handleFormSubmit();
+//       // console.log(new Date().toLocaleString());
+//       pop();
+//     })
+//     .catch((error) => {
+//       // alert("Check your Connection Please ....!");
+//       loading.style.display = "flex";
+//       popError();
+//     });
+// });
+
+// في client-side (script.js)
+const proxyURL = "/.netlify/functions/send-to-sheet"; 
 const form = document.forms["google-sheet"];
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  fetch(scriptURL, { method: "POST", body: new FormData(form) })
+  fetch(proxyURL, { method: "POST", body: new FormData(form) })
     .then((response) => {
       handleFormSubmit();
-      // console.log(new Date().toLocaleString());
       pop();
     })
     .catch((error) => {
-      // alert("Check your Connection Please ....!");
       loading.style.display = "flex";
       popError();
     });
 });
+
+
+
+
+
 
 
 //var timeofsubmission = new Date().toLocaleString();
@@ -174,6 +196,7 @@ window.addEventListener("load", function () {
     loader.style.display = "none";
   }, 5000);
 });
+
 
 
 

@@ -68,16 +68,30 @@ const form = document.forms["google-sheet"];
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  fetch(proxyURL, { method: "POST", body: new FormData(form) })
-    .then((response) => {
+
+  // حول الفورم لـ JSON
+  const formData = Object.fromEntries(new FormData(form));
+
+  fetch(proxyURL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json", // مهم جدًا
+    },
+    body: JSON.stringify(formData),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Response from function:", data); // Debug
       handleFormSubmit();
       pop();
     })
     .catch((error) => {
+      console.error("Error submitting form:", error);
       loading.style.display = "flex";
       popError();
     });
 });
+
 
 
 
@@ -196,6 +210,7 @@ window.addEventListener("load", function () {
     loader.style.display = "none";
   }, 5000);
 });
+
 
 
 

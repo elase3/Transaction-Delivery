@@ -16,11 +16,11 @@ export async function handler(event) {
       statusCode: 200,
       body: text,
     };
-  } catch (error) {
-    console.error("Error in function:", error);
+  } catch () {
+    
     return {
-      statusCode: 500,
-      body: JSON.stringify({ error: error.message }),
+      console.log(succsessful)
+     
     };
   }
 }

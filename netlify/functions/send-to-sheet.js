@@ -1,30 +1,26 @@
-const proxyURL = "/.netlify/functions/send-to-sheet"; 
-const form = document.forms["google-sheet"];
-const loading = document.getElementById("loading");
+export async function handler(event) {
+  try {
+    const formData = JSON.parse(event.body);
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  // حول الفورم لـ JSON
-  const formData = Object.fromEntries(new FormData(form));
-
-  fetch(proxyURL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.error) {
-        popError(); // تظهر للمستخدم رسالة خطأ
-      } else {
-        handleFormSubmit();
-        pop(); // تظهر رسالة نجاح
-      }
-    })
-    .catch(() => {
-      popError(); // تظهر رسالة خطأ لو فيه مشكلة في الشبكة
+    const response = await fetch(process.env.APPS_SCRIPT_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams(formData).toString(),
     });
-});
+
+    const text = await response.text();
+
+    return {
+      statusCode: 200,
+      body: text,
+    };
+  } catch (error) {
+    console.error("Error in function:", error);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: error.message }),
+    };
+  }
+}

@@ -34,7 +34,7 @@ const form = document.forms["google-sheet"];
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log('Form is about to be submitted!')
+  loading.style.display = "flex";
 
   // حول الفورم لـ JSON
   const formData = Object.fromEntries(new FormData(form));
@@ -157,4 +157,5 @@ window.addEventListener("load", function () {
     loader.style.display = "none";
   }, 5000);
 });
+
 

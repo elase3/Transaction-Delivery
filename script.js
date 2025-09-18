@@ -34,6 +34,7 @@ const form = document.forms["google-sheet"];
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+  loading.style.display = "flex";
   loading.style.position = "absolute";
   loading.style.top = "70%";
   loading.style.left = "50%";
@@ -161,6 +162,7 @@ window.addEventListener("load", function () {
     loader.style.display = "none";
   }, 5000);
 });
+
 
 
 

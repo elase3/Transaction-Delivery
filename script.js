@@ -34,7 +34,11 @@ const form = document.forms["google-sheet"];
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  loading.style.display = "flex";
+  loading.style.position = "absolute";
+  loading.style.top = "70%";
+  loading.style.left = "50%";
+  loading.style.transform = "translate(-50%, -50%)";
+  
 
   // حول الفورم لـ JSON
   const formData = Object.fromEntries(new FormData(form));
@@ -157,5 +161,6 @@ window.addEventListener("load", function () {
     loader.style.display = "none";
   }, 5000);
 });
+
 
 
